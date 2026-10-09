@@ -1,0 +1,1548 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta
+        name="description"
+        content="Alun-Alun Majalengka - Ikon ruang publik di pusat Kota Majalengka yang menjadi tempat rekreasi, bersantai, dan berkumpul bersama keluarga maupun teman."
+    >
+
+    <title>Alun-Alun Majalengka</title>
+
+    <style>
+
+        /* ========================================
+           RESET
+        ======================================== */
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* ========================================
+           VARIABLE
+        ======================================== */
+
+        :root {
+            --primary: #247ab8;
+            --primary-dark: #000000;
+            --secondary: #000000;
+
+            --dark: #222;
+            --text: #444;
+            --muted: #777;
+
+            --light: #f7f7f5;
+            --white: #ffffff;
+
+            --border: #e5e5e5;
+
+            --radius: 14px;
+
+            --shadow:
+                0 8px 25px rgba(0, 0, 0, 0.08);
+        }
+
+        /* ========================================
+           GLOBAL
+        ======================================== */
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family:
+                Arial,
+                Helvetica,
+                sans-serif;
+
+            background: var(--light);
+
+            color: var(--text);
+
+            line-height: 1.7;
+        }
+
+        img {
+            display: block;
+            max-width: 100%;
+        }
+
+        a {
+            color: inherit;
+        }
+
+        button,
+        input,
+        select {
+            font-family: inherit;
+        }
+
+        /* ========================================
+           CONTAINER
+        ======================================== */
+
+        .container {
+            width: min(92%, 1200px);
+
+            margin: auto;
+        }
+
+        /* ========================================
+           INTRO / BERANDA
+        ======================================== */
+
+        .intro {
+            padding: 25px 0 25px;
+
+            scroll-margin-top: 90px;
+        }
+
+        .judul {
+            font-size:
+                clamp(30px, 3.5vw, 46px);
+
+            line-height: 1.2;
+
+            color: var(--dark);
+
+            font-weight: 800;
+
+            margin-bottom: 8px;
+        }
+
+        .subjudul {
+            color: var(--muted);
+
+            font-size: 17px;
+        }
+
+        /* ========================================
+           HERO
+        ======================================== */
+
+        .header {
+            background: var(--white);
+
+            padding: 7px;
+
+            border-radius: var(--radius);
+
+            overflow: hidden;
+
+            box-shadow: var(--shadow);
+        }
+
+        .foto-header {
+            display: grid;
+
+            grid-template-columns:
+                1.2fr 2fr;
+
+            gap: 7px;
+
+            min-height: 300px;
+        }
+
+        .foto-utama {
+            position: relative;
+
+            display: flex;
+
+            align-items: flex-end;
+
+            padding: 35px;
+
+            border-radius: 10px;
+
+            overflow: hidden;
+
+            background-image:
+                linear-gradient(
+                    to top,
+                    rgba(0, 0, 0, 0.7),
+                    rgba(0, 0, 0, 0.05)
+                ),
+                url("../Tugas\ PABW\ 1/Alun-Alun Majalengka.jpeg");
+
+            background-size: cover;
+
+            background-position: center;
+        }
+
+        .foto-utama h2 {
+            color: white;
+
+            font-size:
+                clamp(30px, 4vw, 48px);
+
+            line-height: 1.1;
+
+            text-shadow:
+                0 3px 12px rgba(0, 0, 0, 0.5);
+        }
+
+        .foto-utama p {
+            color: rgba(255,255,255,0.9);
+
+            margin-top: 10px;
+
+            font-size: 15px;
+        }
+
+        /* ========================================
+           HERO GALLERY
+        ======================================== */
+
+        .kumpulan-foto {
+            display: grid;
+
+            grid-template-columns:
+                repeat(3, 2fr);
+
+            grid-template-rows:
+                repeat(2, 2fr);
+
+            gap: 7px;
+        }
+
+        .kumpulan-foto img {
+            width: 100%;
+            height: 100%;
+
+            object-fit: cover;
+
+            border-radius: 7px;
+
+            transition:
+                transform 0.3s ease,
+                filter 0.3s ease;
+        }
+
+        .kumpulan-foto img:hover {
+            transform: scale(1.04);
+
+            filter: brightness(1.08);
+        }
+
+        /* ========================================
+           NAVIGATION
+        ======================================== */
+
+        nav {
+            position: sticky;
+
+            top: 0;
+
+            z-index: 1000;
+
+            margin-top: 15px;
+
+            background:
+                rgba(255,255,255,0.96);
+
+            backdrop-filter: blur(10px);
+
+            border:
+                1px solid var(--border);
+
+            border-radius: 12px;
+
+            box-shadow:
+                0 5px 20px rgba(0,0,0,0.06);
+        }
+
+        nav ul {
+            display: flex;
+
+            list-style: none;
+
+            flex-wrap: wrap;
+        }
+
+        nav ul li a {
+            display: block;
+
+            padding: 14px 17px;
+
+            color: var(--dark);
+
+            text-decoration: none;
+
+            font-size: 14px;
+
+            font-weight: 600;
+
+            transition:
+                background 0.25s ease,
+                color 0.25s ease;
+        }
+
+        nav ul li a:hover,
+        nav ul li a.active {
+            background: var(--primary);
+
+            color: white;
+        }
+
+        /* ========================================
+           MAIN CONTENT
+        ======================================== */
+
+        .content {
+            display: grid;
+
+            grid-template-columns:
+                minmax(0, 2fr)
+                minmax(280px, 1fr);
+
+            gap: 30px;
+
+            margin-top: 45px;
+        }
+
+        /* ========================================
+           SECTION
+        ======================================== */
+
+        .section {
+            margin-top: 30px;
+
+            scroll-margin-top: 90px;
+        }
+
+        .judul-section {
+            color: var(--dark);
+
+            font-size: 26px;
+
+            margin-bottom: 22px;
+        }
+
+        .judul-section::after {
+            content: "";
+
+            display: block;
+
+            width: 55px;
+
+            height: 4px;
+
+            margin-top: 8px;
+
+            background: var(--secondary);
+
+            border-radius: 10px;
+        }
+
+        /* ========================================
+           PAKET WISATA
+        ======================================== */
+
+        .paket {
+            display: grid;
+
+            grid-template-columns:
+                repeat(2, minmax(0, 1fr));
+
+            gap: 22px;
+        }
+
+        .card {
+            background: white;
+
+            border:
+                1px solid var(--border);
+
+            border-radius: var(--radius);
+
+            overflow: hidden;
+
+            box-shadow:
+                0 5px 20px rgba(0,0,0,0.05);
+
+            transition:
+                transform 0.3s ease,
+                box-shadow 0.3s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-6px);
+
+            box-shadow:
+                0 15px 35px rgba(0,0,0,0.12);
+        }
+
+        .card-image {
+            overflow: hidden;
+        }
+
+        .card img {
+            width: 100%;
+
+            height: 210px;
+
+            object-fit: cover;
+
+            transition:
+                transform 0.4s ease;
+        }
+
+        .card:hover img {
+            transform: scale(1.05);
+        }
+
+        .card-body {
+            padding: 20px;
+        }
+
+        .tanggal {
+            color: var(--muted);
+
+            font-size: 12px;
+
+            margin-bottom: 6px;
+        }
+
+        .card h3 {
+            color: var(--primary-dark);
+
+            font-size: 20px;
+
+            margin-bottom: 9px;
+        }
+
+        .card p {
+            font-size: 14px;
+
+            margin-bottom: 15px;
+        }
+
+        .harga {
+            display: inline-block;
+
+            padding: 7px 12px;
+
+            background:
+                rgba(232,155,60,0.15);
+
+            color: var(--primary-dark);
+
+            border-radius: 7px;
+
+            font-size: 13px;
+
+            font-weight: 700;
+        }
+
+        /* ========================================
+           SIDEBAR
+        ======================================== */
+
+        .sidebar {
+            background: white;
+
+            padding: 22px;
+
+            border:
+                1px solid var(--border);
+
+            border-radius: var(--radius);
+
+            box-shadow:
+                0 5px 20px rgba(0,0,0,0.05);
+
+            margin-bottom: 22px;
+        }
+
+        /* ========================================
+           SEARCH
+        ======================================== */
+
+        .search {
+            display: flex;
+
+            margin-bottom: 28px;
+
+            border:
+                1px solid var(--border);
+
+            border-radius: 8px;
+
+            overflow: hidden;
+        }
+
+        .search input {
+            width: 100%;
+
+            padding: 12px 14px;
+
+            border: none;
+
+            outline: none;
+        }
+
+        .search button {
+            padding: 0 18px;
+
+            border: none;
+
+            background: var(--primary);
+
+            color: white;
+
+            cursor: pointer;
+
+            font-weight: 600;
+        }
+
+        .search button:hover {
+            background: var(--primary-dark);
+        }
+
+        /* ========================================
+           VIDEO
+        ======================================== */
+
+        .video {
+            position: relative;
+
+            overflow: hidden;
+
+            border-radius: 10px;
+        }
+
+        .video img {
+            width: 100%;
+
+            height: 190px;
+
+            object-fit: cover;
+
+            transition:
+                transform 0.4s ease,
+                filter 0.4s ease;
+        }
+
+        .video:hover img {
+            transform: scale(1.05);
+
+            filter: brightness(0.8);
+        }
+
+        .play {
+            position: absolute;
+
+            top: 50%;
+            left: 50%;
+
+            transform:
+                translate(-50%, -50%);
+
+            width: 58px;
+            height: 58px;
+
+            display: flex;
+
+            align-items: center;
+            justify-content: center;
+
+            background: #e62117;
+
+            color: white;
+
+            border-radius: 50%;
+
+            font-size: 22px;
+        }
+
+        .video-description {
+            margin-top: 12px;
+
+            font-size: 14px;
+
+            color: var(--muted);
+        }
+
+
+        /* ========================================
+           ABOUT
+        ======================================== */
+
+        .about-text {
+            font-size: 14px;
+        }
+
+
+        /* ========================================
+           FASILITAS
+        ======================================== */
+
+        .fasilitas-grid {
+            display: grid;
+
+            grid-template-columns:
+                repeat(4, 1fr);
+
+            gap: 20px;
+        }
+
+        .fasilitas-card {
+            background: white;
+
+            padding: 25px 20px;
+
+            border:
+                1px solid var(--border);
+
+            border-radius: var(--radius);
+
+            box-shadow:
+                0 5px 20px rgba(0,0,0,0.05);
+
+            transition:
+                transform 0.3s ease,
+                box-shadow 0.3s ease;
+        }
+
+        .fasilitas-card:hover {
+            transform: translateY(-5px);
+
+            box-shadow:
+                0 12px 30px rgba(0,0,0,0.1);
+        }
+
+        .fasilitas-icon {
+            font-size: 35px;
+
+            margin-bottom: 12px;
+        }
+
+        .fasilitas-card h3 {
+            color: var(--primary-dark);
+
+            margin-bottom: 8px;
+        }
+
+        .fasilitas-card p {
+            color: var(--muted);
+
+            font-size: 14px;
+        }
+
+
+        /* ========================================
+           MUSEUM
+        ======================================== */
+
+        .museum-content {
+            display: grid;
+
+            grid-template-columns:
+                1fr 1fr;
+
+            gap: 30px;
+
+            align-items: center;
+
+            background: white;
+
+            padding: 25px;
+
+            border-radius: var(--radius);
+
+            box-shadow:
+                0 5px 20px rgba(0,0,0,0.05);
+        }
+
+        .museum-content img {
+            width: 100%;
+
+            height: 280px;
+
+            object-fit: cover;
+
+            border-radius: 10px;
+        }
+
+        .museum-content h3 {
+            color: var(--primary-dark);
+
+            font-size: 24px;
+
+            margin-bottom: 15px;
+        }
+
+        .museum-content p {
+            font-size: 14px;
+
+            margin-bottom: 12px;
+        }
+
+
+        /* ========================================
+           PEMESANAN
+        ======================================== */
+
+        .booking-form {
+            background: white;
+
+            padding: 30px;
+
+            border-radius: var(--radius);
+
+            box-shadow:
+                0 5px 20px rgba(0,0,0,0.05);
+        }
+
+        .form-group {
+            margin-bottom: 18px;
+        }
+
+        .form-group label {
+            display: block;
+
+            margin-bottom: 7px;
+
+            font-weight: 600;
+
+            color: var(--dark);
+        }
+
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+
+            padding: 12px 14px;
+
+            border:
+                1px solid var(--border);
+
+            border-radius: 7px;
+
+            outline: none;
+
+            font-size: 14px;
+        }
+
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+            border-color: var(--primary);
+
+            box-shadow:
+                0 0 0 3px
+                rgba(184,92,36,0.1);
+        }
+
+        .booking-button {
+            border: none;
+
+            padding: 12px 22px;
+
+            background: var(--primary);
+
+            color: white;
+
+            border-radius: 7px;
+
+            font-weight: 700;
+
+            cursor: pointer;
+        }
+
+        .booking-button:hover {
+            background: var(--primary-dark);
+        }
+
+
+        /* ========================================
+           GALLERY
+        ======================================== */
+
+        .gallery-grid {
+            display: grid;
+
+            grid-template-columns:
+                repeat(3, 1fr);
+
+            gap: 15px;
+        }
+
+        .gallery-grid img {
+            width: 100%;
+
+            height: 220px;
+
+            object-fit: cover;
+
+            border-radius: 10px;
+
+            transition:
+                transform 0.3s ease,
+                filter 0.3s ease;
+        }
+
+        .gallery-grid img:hover {
+            transform: scale(1.03);
+
+            filter: brightness(0.85);
+        }
+
+
+        /* ========================================
+           FOOTER
+        ======================================== */
+
+        footer {
+            margin-top: 60px;
+
+            padding: 35px 20px;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    #242424,
+                    #333
+                );
+
+            color: white;
+
+            text-align: center;
+        }
+
+        .footer-title {
+            font-size: 20px;
+
+            font-weight: 700;
+
+            margin-bottom: 5px;
+        }
+
+        .footer-text {
+            color: #bbb;
+
+            font-size: 14px;
+        }
+
+        .copyright {
+            margin-top: 15px;
+
+            padding-top: 15px;
+
+            border-top:
+                1px solid
+                rgba(255,255,255,0.1);
+
+            color: #999;
+
+            font-size: 12px;
+        }
+
+
+        /* ========================================
+           RESPONSIVE TABLET
+        ======================================== */
+
+        @media (max-width: 900px) {
+
+            .content {
+                grid-template-columns: 1fr;
+            }
+
+            .foto-header {
+                grid-template-columns: 1fr;
+            }
+
+            .foto-utama {
+                min-height: 280px;
+            }
+
+            .kumpulan-foto {
+                height: 220px;
+            }
+
+            .fasilitas-grid {
+                grid-template-columns:
+                    repeat(2, 1fr);
+            }
+
+            .museum-content {
+                grid-template-columns: 1fr;
+            }
+
+            .gallery-grid {
+                grid-template-columns:
+                    repeat(2, 1fr);
+            }
+        }
+
+
+        /* ========================================
+           RESPONSIVE MOBILE
+        ======================================== */
+
+        @media (max-width: 600px) {
+
+            .container {
+                width: 94%;
+            }
+
+            .intro {
+                padding-top: 30px;
+            }
+
+            .judul {
+                font-size: 31px;
+            }
+
+            .subjudul {
+                font-size: 14px;
+            }
+
+            .foto-utama {
+                min-height: 240px;
+
+                padding: 25px;
+            }
+
+            .foto-utama h2 {
+                font-size: 32px;
+            }
+
+            .kumpulan-foto {
+                grid-template-columns:
+                    repeat(2, 1fr);
+
+                grid-template-rows:
+                    repeat(4, 120px);
+
+                height: auto;
+            }
+
+            nav ul {
+                display: grid;
+
+                grid-template-columns:
+                    repeat(2, 1fr);
+            }
+
+            nav ul li a {
+                text-align: center;
+
+                padding: 12px 8px;
+
+                font-size: 13px;
+            }
+
+            .content {
+                margin-top: 30px;
+            }
+
+            .paket {
+                grid-template-columns: 1fr;
+            }
+
+            .fasilitas-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .gallery-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .museum-content {
+                padding: 18px;
+            }
+
+            .booking-form {
+                padding: 20px;
+            }
+        }
+        
+        nav ul {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 100%;
+            padding: 0;
+            margin: 0;
+            list-style: none;
+        }
+
+        nav ul li {
+            flex: 1;
+            text-align: center;
+        }
+        
+        nav ul li a {
+            display: block;
+            text-decoration: none;
+        }
+
+    </style>
+</head>
+
+<body>
+
+<div class="container">
+
+    <!-- ========================================
+         BERANDA
+    ======================================== -->
+
+    <header class="intro" id="beranda">
+
+        <h1 class="judul" style="text-align: center;">
+            Selamat Datang di Alun-Alun Majalengka
+        </h1>
+
+        <p class="subjudul" style="text-align: center;">
+            Jelajahi Keindahan dan Pesona Alun-Alun Majalengka
+        </p>
+
+    </header>
+
+
+    <!-- ========================================
+         HERO
+    ======================================== -->
+
+    <section class="header">
+
+        <div class="foto-header">
+
+            <div class="foto-utama">
+
+                <div>
+
+                    <h2>
+                        Alun-Alun<br>
+                        Majalengka
+                    </h2>
+
+                    <p>
+                        Nikmati keindahan, kenyamanan, dan suasana ikonik di pusat Kota Majalengka.
+                    </p>
+
+                </div>
+
+            </div>
+
+            <div class="kumpulan-foto">
+
+                <img
+                    src="../Tugas PABW 1/Kegiatan Berjalan Santai di Alun-Alun Majalengka.jpeg"
+                    alt="Kegiatan Berjalan Santai di Alun-Alun Majalengka">
+
+                <img
+                    src="../Tugas PABW 1/Kegiatan Menikmati Kuliner Makaroni di Alun-Alun Majalengka.jpeg"
+                    alt="Kegiatan Menikmati Kuliner Makaroni di Alun-Alun Majalengka">
+
+                <img
+                    src="../Tugas PABW 1/Kegiatan Mengobrol dengan Teman di Alun-Alun Majalengka.jpeg"
+                    alt="Kegiatan Mengobrol dengan Teman di Alun-Alun Majalengka">
+
+                <img
+                    src="../Tugas PABW 1/Kegiatan Menikmati Suasana Alun-Alun Majalengka.jpeg"
+                    alt="Kegiatan Menikmati Suasana Alun-Alun Majalengka">
+
+                <img
+                    src="../Tugas PABW 1/Kegiatan Bermain Balon Tiup Busa di Alun-Alun Majalengka.jpeg"
+                    alt="Kegiatan Bermain Balon Tiup Busa di Alun-Alun Majalengka">
+
+                <img
+                    src="../Tugas PABW 1/Kegiatan Bermain Sepeda di Alun-Alun Majalengka.jpeg"
+                    alt="Kegiatan Bermain Sepeda di Alun-Alun Majalengka">
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ========================================
+         NAVIGATION
+    ======================================== -->
+
+    <nav aria-label="Navigasi utama">
+
+        <ul>
+
+            <li>
+                <a href="#beranda">
+                    Beranda
+                </a>
+            </li>
+
+            <li>
+                <a href="#about">
+                    Tentang
+                </a>
+            </li>
+
+            <li>
+                <a href="#fasilitas">
+                    Fasilitas Wisata
+                </a>
+            </li>
+
+            <li>
+                <a href="#paket">
+                    Paket Wisata
+                </a>
+            </li>
+
+            <li>
+                <a href="#gallery">
+                    Gallery
+                </a>
+            </li>
+
+        </ul>
+
+    </nav>
+
+    <!-- ========================================
+         MAIN
+    ======================================== -->
+
+    <main>
+
+        <!-- ========================================
+             CONTENT + SIDEBAR
+        ======================================== -->
+
+        <div class="content">
+
+            <section id="paket">
+
+                <h2 class="judul-section">
+                    Daftar Paket Wisata
+                </h2>
+
+
+                <div class="paket">
+                    
+                    <article class="card">
+
+                        <div class="card-image">
+
+                            <img
+                                src="../Tugas PABW 1/Paket Wisata 1.jpeg"
+                                alt="Gambar Alun-Alun Majalengka">
+
+                        </div>
+
+                        <div class="card-body">
+
+                            <div class="tanggal">
+                                26 Mei 2026
+                            </div>
+
+                            <h3>
+                                Paket Wisata Alun-Alun Majalengka
+                            </h3>
+
+                            <p>
+                                Nikmati keindahan dan suasana nyaman Alun-Alun Majalengka sebagai ruang terbuka untuk bersantai, beraktivitas, dan menghabiskan waktu bersama keluarga maupun teman.
+                            </p>
+
+                            <span class="harga">
+                                Mulai Rp275.000
+                            </span>
+
+                        </div>
+
+                    </article>
+
+                    <article class="card">
+
+                        <div class="card-image">
+
+                            <img
+                                src="../Tugas PABW 1/Paket Wisata 2.jpeg"
+                                alt="Gambar Alun-Alun Majalengka">
+
+                        </div>
+
+                        <div class="card-body">
+
+                            <div class="tanggal">
+                                20 September 2026
+                            </div>
+
+                            <h3>
+                                Paket Wisata Alun-Alun Majalengka
+                            </h3>
+
+                            <p>
+                                Temukan berbagai aktivitas menarik di Alun-Alun Majalengka, mulai dari bermain, menikmati kuliner, hingga menghabiskan waktu bersama orang-orang terdekat.
+                            </p>
+
+                            <span class="harga">
+                                Mulai Rp350.000
+                            </span>
+
+                        </div>
+
+                    </article>
+
+                </div>
+
+            </section>
+
+            <!-- ========================================
+                 SIDEBAR
+            ======================================== -->
+
+            <aside>
+
+                <!-- SEARCH -->
+
+                <div class="sidebar">
+
+                    <form
+                        class="search"
+                        onsubmit="return false;"
+                    >
+
+                        <input
+                            type="search"
+                            placeholder="Cari paket wisata..."
+                            aria-label="Cari paket wisata"
+                        >
+
+                        <button type="submit">
+                            Cari
+                        </button>
+
+                    </form>
+
+                    <!-- VIDEO -->
+
+                    <h2 class="judul-section">
+                        Video Wisata
+                    </h2>
+
+                    <div class="video">
+                    
+                        <video controls width="100%" poster="../Tugas PABW 1/Poster-Video.jpeg">
+                            <source src="../Tugas PABW 1/Video Alun-Alun Majalengka.mp4" type="video/mp4">
+                            Browser kamu tidak mendukung pemutaran video.
+                        </video>
+                    
+                        <p class="video-description">
+                            Video suasana Alun-Alun Majalengka.
+                        </p>
+                    </div>
+
+                <!-- TENTANG -->
+
+                <div
+                    class="sidebar"
+                    id="about"
+                >
+
+                    <h2 class="judul-section">
+                        Tentang Wisata
+                    </h2>
+
+                    <p class="about-text">
+                        Alun-Alun Majalengka merupakan ruang terbuka publik yang menjadi tempat masyarakat untuk bersantai, beraktivitas, dan menghabiskan waktu bersama. Nikmati suasana yang nyaman, berbagai fasilitas, serta beragam aktivitas bersama keluarga dan teman di pusat Kota Majalengka.
+                    </p>
+
+                </div>
+
+            </aside>
+
+        </div>
+
+
+        <!-- ========================================
+             FASILITAS
+        ======================================== -->
+
+        <section
+            class="section"
+            id="fasilitas"
+        >
+
+            <h2 class="judul-section">
+                Fasilitas Wisata
+            </h2>
+
+
+            <div class="fasilitas-grid">
+
+
+                <div class="fasilitas-card">
+
+                    <div class="fasilitas-icon">
+                        🌱
+                    </div>
+
+                    <h3>
+                        Rumput Sintetis
+                    </h3>
+
+                    <p>
+                        Area yang nyaman untuk bermain, bersantai, dan melakukan berbagai aktivitas ringan.
+                    </p>
+
+                </div>
+
+
+                <div class="fasilitas-card">
+
+                    <div class="fasilitas-icon">
+                        🛝
+                    </div>
+
+                    <h3>
+                        Area Bermain Anak
+                    </h3>
+
+                    <p>
+                        Tempat bermain yang dapat digunakan anak-anak untuk bersenang-senang dan beraktivitas.
+                    </p>
+
+                </div>
+
+
+                <div class="fasilitas-card">
+
+                    <div class="fasilitas-icon">
+                        🪑
+                    </div>
+
+                    <h3>
+                        Area Tempat Duduk
+                    </h3>
+
+                    <p>
+                        Tempat untuk beristirahat dan bersantai sambil menikmati suasana Alun-Alun Majalengka.
+                    </p>
+
+                </div>
+
+
+                <div class="fasilitas-card">
+
+                    <div class="fasilitas-icon">
+                        🏟️
+                    </div>
+
+                    <h3>
+                        Tribun Penonton
+                    </h3>
+
+                    <p>
+                        Area tempat duduk untuk menyaksikan berbagai kegiatan atau aktivitas yang berlangsung di sekitar alun-alun.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+        <!-- ========================================
+             GALLERY
+        ======================================== -->
+
+        <section
+            class="section"
+            id="gallery"
+        >
+
+            <h2 class="judul-section">
+                Gallery Alun-Alun Majalengka
+            </h2>
+
+
+            <div class="gallery-grid">
+
+                <img
+                    src="../Tugas PABW 1/Gallery 1.jpeg"
+                    alt="Gallery 1"
+                >
+
+                <img
+                    src="../Tugas PABW 1/Gallery 2.jpeg"
+                    alt="Gallery 2"
+                >
+
+                <img
+                    src="../Tugas PABW 1/Gallery 3.jpeg"
+                    alt="Gallery 3"
+                >
+
+                <img
+                    src="../Tugas PABW 1/Gallery 4.jpeg"
+                    alt="Gallery 4"
+                >
+
+                <img
+                    src="../Tugas PABW 1/Gallery 5.jpeg"
+                    alt="Gallery 5"
+                >
+
+                <img
+                    src="../Tugas PABW 1/Gallery 6.jpeg"
+                    alt="Gallery 6"
+                >
+
+            </div>
+
+        </section>
+
+    </main>
+
+    <!-- ========================================
+         FOOTER
+    ======================================== -->
+
+    <footer>
+
+        <div class="footer-title">
+            Alun-Alun Majalengka
+        </div>
+
+        <div class="footer-text">
+            Rekreasi • Bersantai • Ruang Terbuka
+        </div>
+
+        <div class="copyright">
+            © 2026 Alun-Alun Majalengka.
+            Semua hak dilindungi.
+        </div>
+
+    </footer>
+
+</div>
+
+<!-- ========================================
+     JAVASCRIPT
+======================================== -->
+
+<script>
+
+    /* ========================================
+       PEMESANAN
+    ======================================== */
+
+    function pesanWisata(event) {
+
+        event.preventDefault();
+
+        const nama =
+            document.getElementById("nama").value;
+
+        const email =
+            document.getElementById("email").value;
+
+        const paket =
+            document.getElementById("paket-wisata").value;
+
+        const jumlah =
+            document.getElementById("jumlah").value;
+
+        const tanggal =
+            document.getElementById("tanggal-kunjungan").value;
+
+        const pesan =
+            document.getElementById("pesan").value;
+
+
+        alert(
+            "Pemesanan berhasil dibuat!\n\n" +
+
+            "Nama: " + nama + "\n" +
+
+            "Email: " + email + "\n" +
+
+            "Paket: " + paket + "\n" +
+
+            "Jumlah: " + jumlah + " orang\n" +
+
+            "Tanggal: " + tanggal + "\n\n" +
+
+            "Pesan: " +
+            (pesan || "-")
+        );
+
+    }
+
+
+    /* ========================================
+       NAVIGATION ACTIVE STATE
+    ======================================== */
+
+    const links =
+        document.querySelectorAll("nav a");
+
+    links.forEach(function(link) {
+
+        link.addEventListener(
+            "click",
+            function() {
+
+                links.forEach(function(item) {
+
+                    item.classList.remove("active");
+
+                });
+
+                this.classList.add("active");
+
+            }
+        );
+
+    });
+
+
+    /* ========================================
+       SEARCH
+    ======================================== */
+
+    const searchForm =
+        document.querySelector(".search");
+
+    searchForm.addEventListener(
+        "submit",
+        function() {
+
+            const keyword =
+                this.querySelector("input").value
+                .trim();
+
+            if (keyword === "") {
+
+                alert(
+                    "Silakan masukkan kata pencarian."
+                );
+
+                return;
+
+            }
+
+            alert(
+                "Pencarian untuk: " +
+                keyword
+            );
+
+        }
+    );
+
+</script>
+
+</body>
+</html>
